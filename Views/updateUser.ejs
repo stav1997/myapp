@@ -1,0 +1,47 @@
+<link rel='stylesheet' href='/assets/css/Landingpage.css'/>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="box-nav d-flex-justify-between">
+  <a href="/">
+    <span class="text-gradient" ><i class="fas fa-angle-double-left"></i>All users</span>
+  </a>
+</div>
+
+<div class="form-title text-center">
+    <h2>Lets update this user!</h2>
+</div>
+
+<form action="/api/update_user" method="GET" id="update_user">
+
+    <div class="new_user">
+
+        <div class="form-group">
+            <label for="id" class="text-light"> ID</label>
+            <input type="text" id="id" name="id" value="<%=user.id%>">
+        </div>
+        <div class="form-group">
+            <label for="name" class="text-light"> Full Name</label>
+            <input type="text" name="name" value="<%=user.name%>">
+        </div>
+        <div class="form-group">
+            <label for="email" class="text-light"> Email</label>
+            <input type="text" name="email" value="<%=user.email%>">
+        </div>
+        <div class="form-group">
+            <label for="last_connection" class="text-light"> Last connection</label>
+            <input type="date" name="last_connection" value="<%=user.last_connection%>">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn text-dark" onclick="update_click();" >Save</button>
+    </div>
+</form>
+<script>
+
+    function update_click(){
+        alert("User has been uploaded seccessfuly!");
+    }
+
+</script>
+
