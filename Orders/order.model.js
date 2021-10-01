@@ -20,7 +20,7 @@ Order.create = function (newOrder, result) {
 };
 
 Order.findAll = function (result) {
-    conn.db.query("Select orderId, clientName, clientPhone, orderDetails, orderNote, TIME_FORMAT(orderDate, '%H:%i:%s') as 'orderTime' FROM orders WHERE  DATE_FORMAT(orderDate, '%Y-%m-%d') = SUBDATE(CURRENT_DATE, 1) ORDER BY orderDate DESC", function (err, res) {
+    conn.db.query("Select orderId, clientName, clientPhone, orderDetails, orderNote, TIME_FORMAT(orderDate, '%H:%i:%s') as 'orderTime', DATE_FORMAT(SUBDATE(CURRENT_DATE, 1), '%d/%m/%Y') as 'orderDate' FROM orders WHERE  DATE_FORMAT(orderDate, '%Y-%m-%d') = SUBDATE(CURRENT_DATE, 1) ORDER BY orderDate DESC", function (err, res) {
         if(err) {
             console.log("error: ", err);
             result(null, err);

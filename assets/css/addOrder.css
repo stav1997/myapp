@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+  }
+ .headline{
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-weight: bold;
+    background-color: #0000b121;
+    padding: 55px;
+
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  #goHome{
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  #save{
+    margin-top: 2%;
+    text-align: center;
+    align-items: center;
+    
+  }
+
+  
+  .col-25-required:after {
+    content:"*";
+    color: red;
+  }
+
+  .col-25, .col-25-required {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 65%;
+    margin-top: 6px;
+  }
+
+  .new_order{
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  input, textarea{
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+  }
+
+  
+form{
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #0000001a;
+  border: 2px solid #252525;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}

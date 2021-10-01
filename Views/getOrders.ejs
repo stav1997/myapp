@@ -1,16 +1,16 @@
-<link rel='stylesheet' href='/assets/css/OrdersList.css'/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<link rel='stylesheet' href='/assets/css/Landingpage.css'/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel='stylesheet' href='/assets/css/OrdersList.css'/>
 
 <body>    
 <div class="jumbotron centered" id="jumbo">
     <div class="headline">
-      <h1  id="stav">Yesterday's ordars:
-      </h1>
-      <div class="box-nav d-flex-justify-between">
-        <a href="/">
-          <span class="text-gradient" ><i class="fas fa-home"></i> Back</span>
-        </a>
+      <h1  id="stav">Yesterday's ordars:</h1>
+      <h1  id="stav"><%= listOrders[0].orderDate;%></h1>
+      <div id="goHome">
+        <a class="btn btn-primary" href="/" role="button"> Home <i class="fas fa-home"></i></a>
       </div>
     </div>
 </div>
@@ -20,7 +20,6 @@
      data-detail-formatter="detailFormatter" data-sortable="true" >
      <thead class="thead-dark">
         <tr>
-          <th></th>
           <th class="sort" data-sortable="true" scope="col" ><b>Order Id</b></th>
           <th class="sort" data-sortable="true" scope="col" ><b>Client Name</b></th>
           <th data-sortable="false" scope="col"><b>Client Phone</b></th>
@@ -32,7 +31,6 @@
     <tbody>
         <%listOrders.forEach(function(order, index){%>
             <tr class="tableclass">
-                <td id="td<%=index%>"><b>+</b></td>
                 <td><%= order.orderId %></td>
                 <td><%= order.clientName %></td>
                 <td><%= order.clientPhone %></td>

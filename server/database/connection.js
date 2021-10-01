@@ -33,7 +33,6 @@ db.query(sql1, err => {
     console.log('Orders table created');
 });
 
-
 const conn = async()=>{
     try {
         await db.connect(err =>{

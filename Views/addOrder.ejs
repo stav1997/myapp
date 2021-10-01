@@ -1,45 +1,52 @@
-<link rel='stylesheet' href='/assets/css/OrdersList.css'/>
-<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<div class="jumbotron centered" id="jumbo">
-    <div class="headline">
-      <h1 id="stav">Yammie new ordar:</h1>
-      <div class="box-nav d-flex-justify-between">
-        <a href="/">
-          <span class="text-gradient" ><i class="fas fa-home"></i> Back</span>
-        </a>
-      </div>
-    </div>
-</div>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<link rel='stylesheet' href='/assets/css/Landingpage.css'/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel='stylesheet' href='/assets/css/addOrder.css'/>
 
-<form action= "/api/addOrder" method="POST" id="new_order">
-    <div class="new_order">
+<body>
 
-        <div class="form-group">
-            <label for="clientName" class="text-light"> Name</label>
-            <input type="text" id="name" name="clientName" value="" placeholder="John Doe" pattern="^(\w\w+)\s(\w+)$" required>
+    <div class="jumbotron centered" id="jumbo">
+        <div class="headline">
+        <h1  id="stav">Yammie new ordar:</h1>
+        <div id="goHome">
+            <a class="btn btn-primary" href="/" role="button"> Home <i class="fas fa-home"></i></a>
         </div>
-
-        <div class="form-group">
-            <label for="clientPhone" class="text-light"> Phone number</label>
-            <input type="text" name="clientPhone" value="" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="orderDetails" class="text-light"> Order details</label>
-            <textarea rows = "1" cols = "40" name = "orderDetails" placeholder= "Enter details here..." required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="orderNote" class="text-light"> Order notes</label>
-            <input type="text" name="orderNote" placeholder="small chicken" required>
         </div>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn text-dark" onclick="add_click();">Save order</button>
-    </div>
-</form>
+    <form action= "/api/addOrder" method="POST" id="new_order">
+        <div class="new_order">
+            <div class="row">
+                <label class="col-25-required" for="clientName"> Name: </label>
+                <input class="col-75" type="text" id="name" name="clientName" value="" placeholder="John Doe" pattern="^(\w\w+)\s(\w+)$" title="Enter first and last name!" required>
+            </div>
+
+            <div class="row">
+                <label class="col-25-required" for="clientPhone"> Phone number: </label>
+                <input class="col-75" type="text" name="clientPhone" value="" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number should be in this form 123-456-7890!" required>
+            </div>
+
+            <div class="row">
+                <label class="col-25-required" for="orderDetails"> Order details: </label>
+                <textarea class="col-75" rows = "1" cols = "40" name = "orderDetails" placeholder= "Enter details here..." title="Insert order" required></textarea>
+            </div>
+
+            <div class="row">
+                <label class="col-25" for="orderNote" > Order notes: </label>
+                <input class="col-75" type="text" name="orderNote" placeholder="small chicken">
+            </div>
+
+
+        </div>
+        <div id = "save">
+            <button  type="submit" class="btn btn-primary" onclick="add_click();">Save order</button>
+        </div>
+    </form>
+
+
+    
+</body>
 
 <script>
 
