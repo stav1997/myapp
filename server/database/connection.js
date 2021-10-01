@@ -7,12 +7,12 @@ const db1 = mysql.createConnection({
     timezone: 'utc'
 });
 
-let sql = 'CREATE DATABASE IF NOT EXISTS Users';
+let sql = 'CREATE DATABASE IF NOT EXISTS Yammie';
 db1.query(sql, err => {
     if(err){
         throw err
     }
-    console.log('Database created');
+    console.log('Yammie database created');
 });
 
 db1.end();
@@ -21,16 +21,16 @@ const db = mysql.createConnection({
     host: 'localhost', 
     user: 'root', 
     password: '', 
-    database: 'Users',
+    database: 'Yammie',
     timezone: 'utc'
 });
 
-let sql1 = 'CREATE TABLE IF NOT EXISTS users(id int NOT NULL, name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, last_connection DATE NOT NULL, PRIMARY KEY(id))';
+let sql1 = 'CREATE TABLE IF NOT EXISTS Orders(orderId int NOT NULL AUTO_INCREMENT, clientName VARCHAR(255) NOT NULL, clientPhone VARCHAR(255) NOT NULL, orderDetails VARCHAR(65535) NOT NULL, orderNote VARCHAR(255), orderDate DATE NOT NULL, PRIMARY KEY(orderId))';
 db.query(sql1, err => {
     if(err){
         throw err
     }
-    console.log('users table created');
+    console.log('Orders table created');
 });
 
 

@@ -4,8 +4,8 @@ const services = require('../services/render');
 
 router.get('/index', services.homeRoutes);
 
-router.get('/addUser', services.addUserRoutes);
+router.get('/getOrders', services.getOrdersRoutes);
 
-router.get('/updateUser', services.updateUserRoutes);
+router.get('/addOrder', services.addOrderRoutes);
 
 module.exports = router;

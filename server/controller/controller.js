@@ -1,63 +1,30 @@
 const conn = require('../../server/database/connection');
-//db connection
-// conn();
-const User = require("../../Users/user.model");
+
+const Order = require("../../Orders/order.model");
 
 exports.findAll = function(req, res) {
-    User.findAll(function(err, user) {
+    Order.findAll(function(err, order) {
       if (err)
         res.send(err);
-      res.send(user);
+      console.log(order);
+      res.send(order);
     });
 };
 
 exports.create = function(req, res) {
-    const new_user = new User(req.body);
+  console.log(req.body);
+    const new_order = new Order(req.body);
         if(Object.keys(req.body).length === 0){
             res.status(400).send({ error:true, message: 'Please provide all required field' });
-        }else{
-          User.findById(new_user.id, function(err, result){
-            if(result.length!=0){
-              console.log('ID already exist');
-              res.render('addUser', {msg: 'ID already exist'});
-            }
-            else{
-              User.create(new_user, function(err, user) {
-                if (err)
-                    res.send(err);
-                    res.render('addUser', {success: 'User was added seccessfuly'});
-                  });
-            }
-          })
-            
-    }
-};
-
-exports.findById = function(req, res) {
-    User.findById(req.query.id, function(err, user) {
-      if (err)
-        res.send(err);
-      res.json(user);
-    });
-};
-
-exports.update = function(req, res) {
-
-    if(Object.keys(req.query).length === 0){
-      res.status(400).send({ error:true, message: 'Please provide all required field' });
-    }else{
-        User.update(req.query.id, new User(req.query), function(err, user) {
+        }
+        else{
+          Order.create(new_order, function(err, order) {
             if (err)
                 res.send(err);
-            res.redirect('/');//redirecting to home
+                res.render('addOrder', {success: 'Order was added seccessfuly'});
               });
-    }
-};
-exports.delete = function(req, res) {
-  User.delete( req.query.id, function(err, user) {
-    if (err)
-      res.send(err);
-    res.redirect('/');//redirecting to home
-  });
+        }
+}
+            
     
-};
+

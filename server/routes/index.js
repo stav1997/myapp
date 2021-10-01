@@ -11,15 +11,15 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 router.get('/', services.homeRoutes);
-router.get('/addUser', services.addUserRoutes);
-router.get('/updateUser', services.updateUserRoutes);
+router.get('/addOrder', services.addOrderRoutes);
+router.get('/getOrders', services.getOrdersRoutes);
 
 //API
-router.post('/api/users', controller.create);
-router.get('/api/update_user', controller.update);
-router.get('/api/delete_user', controller.delete);
-router.get('/api/users', controller.findAll);
-router.get('/api/user', controller.findById);
+router.post('/api/addOrder', controller.create);
+// router.get('/api/update_user', controller.update);
+// router.get('/api/delete_user', controller.delete);
+router.get('/api/orders', controller.findAll);
+// router.get('/api/user', controller.findById);
 
 
 module.exports = router;

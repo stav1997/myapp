@@ -1,118 +1,23 @@
 <link rel='stylesheet' href='/assets/css/Landingpage.css'/>
 <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<div class="jumbotron centered" id="jumbo">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+  <div class="jumbotron centered" id="jumbo">
     <div class="container">
-      <h1 class="display-3" id="stav">Hello Stav!
-        <span>Welcome to your job search journey</span>
+      <h1 class="display-3" id="Yammie">Yammie Restaurant!
       </h1>
 
     </div>
-</div>
+  </div>
+  <div id="addOrder">
+    <a class="btn btn-primary" href="/addOrder" role="button">Add new order <i class="fas fa-cart-plus"></i></a>
+  </div>
 
-<div class="box-nav d-flex-justify-between">
-  <a href="/addUser">
-    <span class="text-gradient">New User<i class="fas fa-user"></i></span>
-  </a>
-</div>
+  <div id="getOrders">
+    <a class="btn btn-primary" href="/getOrders" role="button">Get all orders from yesterday <i class="fas fa-list-ul"></i></a>
 
-<div class="container mt-5" id="divTable">
-    <table id= "users" data-toggle="table" data-detail-view="true"
-     data-detail-formatter="detailFormatter" data-sortable="true" >
-     <thead class="thead-dark">
-        <tr>
-          <th></th>
-          <th data-sortable="true" scope="col" onclick="sortTable(1)"><b>User id</b></th>
-          <th data-sortable="true" scope="col" onclick="sortTable(2)"><b>Name</b></th>
-          <th data-sortable="true" scope="col" onclick="sortTable(3)"><b>Email</b></th>
-          <th data-sortable="true" scope="col" onclick="sortTable(4)"><b>Last connection</b></th>
-          <th data-sortable="true" scope="col" ><b>Actions</b></th>
+  </div>
 
-        </tr>
-    </thead>
-    <tbody>
-        <%listUsers.forEach(function(user, index){%>
-            <tr class="tableclass" >
-                <td><b>-</b></td>
-                <td><%= user.id %></td>
-                <td><%= user.name %></td>
-                <td><%= user.email %></td>
-                <td><%= user.last_connection%></td>
+</body>
 
-                <td>
-                  <a href="/updateUser?id=<%= user.id %>" >
-                    <span class="text-gradient" ><i class="fas fa-user-edit"></i></span>
-                  </a>
-                  <a href="/api/delete_user?id=<%= user.id %>" onclick="return confirm_click();"> <i class="fas fa-user-minus"></i>
-                  </a>
-                </td>
-
-            </tr>
-        <% }) %>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-
-      function confirm_click(){
-        return confirm("Are you sure you want to delete this user?");
-      }
-
-        function filterTable(id, name, last_connection){
-            if(id == '')
-                id = 'users.id';  
-
-            if(name == " ")  
-                name= 'users.name';
-            
-            if(last_connection == "''")  
-                last_connection = "'1990-10-01'"; 
-
-        }
-
-
-        function sortTable(n) {
-          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-          table = document.getElementById("users");
-          switching = true;
-          dir = "asc";
-          
-          while (switching) {
-
-            switching = false;
-            rows = table.rows;
-            
-            for (i = 1; i < (rows.length - 1); i++) {
-                shouldSwitch = false;
-
-                x = rows[i].getElementsByTagName("TD")[n];
-                y = rows[i + 1].getElementsByTagName("TD")[n];
-               
-                if (dir == "asc") {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else if (dir == "desc") {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-            }
-            if (shouldSwitch) {
-              
-              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-              switching = true;
-              switchcount ++;
-            } else {
-              if (switchcount == 0 && dir == "asc") {
-                dir = "desc";
-                switching = true;
-              }
-            }
-          }
-        }
-        </script>
