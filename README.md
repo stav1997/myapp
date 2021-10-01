@@ -1,6 +1,7 @@
 # MY APP
 This project contains 4 main folders:
 1. server folser-this folder contains 4 sub folders:
+  
   1.1. controller folder- this folder contains the exported functions such as-
     -findAll- to find all orders from yesterday in the database.
     -create- to create a new order.
