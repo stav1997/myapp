@@ -1,0 +1,53 @@
+<link rel='stylesheet' href='/assets/css/OrdersList.css'/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+<body>    
+<div class="jumbotron centered" id="jumbo">
+    <div class="headline">
+      <h1  id="stav">Yesterday's ordars:
+      </h1>
+      <div class="box-nav d-flex-justify-between">
+        <a href="/">
+          <span class="text-gradient" ><i class="fas fa-home"></i> Back</span>
+        </a>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-5" id="divTable">
+    <table class="sortable" data-custom-sort="customSort" id= "orders" data-toggle="table" data-detail-view="true"
+     data-detail-formatter="detailFormatter" data-sortable="true" >
+     <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th class="sort" data-sortable="true" scope="col" ><b>Order Id</b></th>
+          <th class="sort" data-sortable="true" scope="col" ><b>Client Name</b></th>
+          <th data-sortable="false" scope="col"><b>Client Phone</b></th>
+          <th data-sortable="false" scope="col"><b>Order Details</b></th>
+          <th data-sortable="false" scope="col"><b>Order Note</b></th>
+          <th data-sortable="true" scope="col"><b>Order Time</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%listOrders.forEach(function(order, index){%>
+            <tr class="tableclass">
+                <td id="td<%=index%>"><b>+</b></td>
+                <td><%= order.orderId %></td>
+                <td><%= order.clientName %></td>
+                <td><%= order.clientPhone %></td>
+                <td><%= order.orderDetails%></td>
+                <td><%= order.orderNote %></td>
+                <td><%= order.orderTime%></td>
+                <span style="display: none;" id="desc<%=index%>">
+                    <b style="font-size: large;"><u>Details</u></b>
+                      <p>stav</p>
+                      <p>stavit</p>
+                </span>
+            </tr>
+
+        <% }) %>
+        </tbody>
+      </table>
+    </div>
+</body>

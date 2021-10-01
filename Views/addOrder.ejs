@@ -1,0 +1,51 @@
+<link rel='stylesheet' href='/assets/css/OrdersList.css'/>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="jumbotron centered" id="jumbo">
+    <div class="headline">
+      <h1 id="stav">Yammie new ordar:</h1>
+      <div class="box-nav d-flex-justify-between">
+        <a href="/">
+          <span class="text-gradient" ><i class="fas fa-home"></i> Back</span>
+        </a>
+      </div>
+    </div>
+</div>
+
+<form action= "/api/addOrder" method="POST" id="new_order">
+    <div class="new_order">
+
+        <div class="form-group">
+            <label for="clientName" class="text-light"> Name</label>
+            <input type="text" id="name" name="clientName" value="" placeholder="John Doe" pattern="^(\w\w+)\s(\w+)$" required>
+        </div>
+
+        <div class="form-group">
+            <label for="clientPhone" class="text-light"> Phone number</label>
+            <input type="text" name="clientPhone" value="" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="orderDetails" class="text-light"> Order details</label>
+            <textarea rows = "1" cols = "40" name = "orderDetails" placeholder= "Enter details here..." required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="orderNote" class="text-light"> Order notes</label>
+            <input type="text" name="orderNote" placeholder="small chicken" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn text-dark" onclick="add_click();">Save order</button>
+    </div>
+</form>
+
+<script>
+
+    function add_click(){
+        alert("Order has been added seccessfuly!");
+    }
+   
+</script>
+

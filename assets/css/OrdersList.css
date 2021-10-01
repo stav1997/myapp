@@ -1,0 +1,130 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("images.jpg");
+    background-size:cover;
+  }
+  
+form{
+  border: 3px solid #252525;
+  border-collapse: collapse;
+  margin-bottom: 6px;
+
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80vw;
+  margin: 80px;
+  text-align: center;
+
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .thead-dark{
+    background-color: #5e5858;
+    border : 3px solid #1d1a1a;
+
+  }
+  
+  .thead-dark th{
+      color: white;
+  }
+  
+  #last {
+    border : 3px ;
+  }
+  tr:hover{
+    background-color: #4d4949;
+  }
+  
+  tr:hover td>a{
+    box-shadow: none;
+  }
+
+  input{
+    padding: 4px 7px;
+    margin: 5px 0;
+    box-sizing: border-box;
+  }
+  label{
+    margin: 8px 0;
+    padding: 3px;
+
+  }
+  
+  tr{border: 1px solid var(--border);}
+
+  td{
+    border: none;
+    position: relative;
+  }
+
+  /*add user & update*/
+  .form-title{
+    margin-top: 2em;
+    text-align: center;
+
+  }
+  .form-title >h2{
+    padding: .5em 0;
+    position: relative;
+  }
+
+  .headline{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #cccce7;
+    padding: 55px;
+
+  }
+
+  .new_user{
+    max-width: 786px;
+    margin: auto;
+  }
+  #add_user .form-group, #new_user .form-group{
+    margin: .4em 0;
+  }
+  
+  #new_user .form-group input[type="text"],
+  #add_user .form-group input[type="text"]{
+    width: 100%;
+    padding: .6em 1em;
+    margin:.5em 0;
+    border: 1px solid ;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    border-radius: .2em;
+  }
+
+  #new_user .form-group input[type="date"],
+  #add_user .form-group input[type="date"]{
+    width: 100%;
+    padding: .6em 1em;
+    margin:.5em 0;
+    border: 1px solid ;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    border-radius: .2em;
+  }
+
+  .sort:hover {
+    background-color:#797676;
+  }
+  
+  .sort.asc > i.material-icons::after {
+    content: "arrow_drop_up";
+  }
+  .sort.desc > i.material-icons::after {
+    content: "arrow_drop_down";
+  }
+
