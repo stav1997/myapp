@@ -15,7 +15,7 @@ exports.create = function(req, res) {
   console.log(req.body);
     const new_order = new Order(req.body);
         if(Object.keys(req.body).length === 0){
-            res.status(400).send({ error:true, message: 'Please provide all required field' });
+            res.status(400).send({ error:true, message: 'Please provide all required field' });//req.body is empty
         }
         else{
           Order.create(new_order, function(err, order) {

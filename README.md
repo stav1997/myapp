@@ -21,6 +21,9 @@ In addition, the project contains an app.js file which connect to the server.
 
 The package.json file contains all the depandencies of the project.
 
+# Notes:
+1. Due to the use of mySQL, 
+
 # Instructions:
 1. Clone the project from git.
 2. Run the comand "npm init" to install all the depandencies for the project.

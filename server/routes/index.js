@@ -16,10 +16,6 @@ router.get('/getOrders', services.getOrdersRoutes);
 
 //API
 router.post('/api/addOrder', controller.create);
-// router.get('/api/update_user', controller.update);
-// router.get('/api/delete_user', controller.delete);
 router.get('/api/orders', controller.findAll);
-// router.get('/api/user', controller.findById);
-
 
 module.exports = router;
