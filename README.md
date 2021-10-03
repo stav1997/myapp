@@ -21,9 +21,11 @@ This project contains 4 main folders:
 In addition, the project contains an app.js file which connect to the server.
 
 The package.json file contains all the depandencies of the project.
-
+ 
 # Notes:
-1. Due to the use of mySQL, 
+1. I have manually inserted some rows into the database.
+2. The "Get all orders from yesterday" page only shows *YESTERDAY'S* orders, you can change the date of the orders to see the functionality from the connection.js file and modify the dates.
+ 
 
 # Instructions:
 1. Clone the project from git.
