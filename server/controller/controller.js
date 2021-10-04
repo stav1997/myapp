@@ -3,11 +3,12 @@ const conn = require('../../server/database/connection');
 const Order = require("../../Orders/order.model");
 
 exports.findAll = function(req, res) {
-    Order.findAll(function(err, order) {
+    Order.findAll(function(err, orders) {
       if (err)
         res.send(err);
-      console.log(order);
-      res.send(order);
+      console.log(orders);
+
+      res.send(orders);
     });
 };
 

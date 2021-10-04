@@ -18,8 +18,13 @@ exports.addOrderRoutes = (req, res)=>{
 exports.getOrdersRoutes = (req, res)=>{
     axios.get('http://localhost:3000/api/orders')
     .then(function(response){
+        
+        let today = new Date();
+        let yesterday = new Date();
+        yesterday.setDate(today.getDate()-1)
+        var date = yesterday.getDate()  + "-" + (yesterday.getMonth()+1) + "-" + yesterday.getFullYear()
 
-        res.render('getOrders', {listOrders:response.data});
+        res.render('getOrders', {listOrders:response.data, yesterday:date});
     })
     .catch(err=>{
         res.send(err);

@@ -8,7 +8,7 @@
 <div class="jumbotron centered" id="jumbo">
     <div class="headline">
       <h1  id="stav">Yesterday's ordars:</h1>
-      <h1  id="stav"><%= listOrders[0].orderDate;%></h1>
+      <h1> <%=yesterday%></h1>
       <div id="goHome">
         <a class="btn btn-primary" href="/" role="button"> Home <i class="fas fa-home"></i></a>
       </div>
@@ -50,3 +50,15 @@
       </table>
     </div>
 </body>
+
+<script>
+  function getYesterday(){
+    document.write("welcome to Javatpoint");  
+
+    // console.log("hey")
+    // let today = new Date();
+    // let yesterday = new Date();
+
+    // return yesterday.setDate(today.getDate() - 1);
+  }
+</script>
